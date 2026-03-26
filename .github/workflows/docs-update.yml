@@ -62,7 +62,7 @@ jobs:
           node .github/scripts/update-features.js ${{ steps.count-components.outputs.components }} ${{ steps.count-components.outputs.sections }}
       
       - name: Commit documentation changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "docs: auto-update structure and features documentation [skip ci]"
           file_pattern: "docs/STRUCTURE.md docs/FEATURES.md"
@@ -110,7 +110,7 @@ jobs:
           CHANGED_FILES: ${{ steps.changed-files.outputs.files }}
       
       - name: Commit changelog
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "docs: auto-update changelog [skip ci]"
           file_pattern: "docs/CHANGELOG.md"
@@ -146,7 +146,7 @@ jobs:
           node .github/scripts/update-technologies.js
       
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "docs: auto-update dependencies documentation [skip ci]"
           file_pattern: "docs/TECHNOLOGIES.md"
@@ -194,7 +194,7 @@ jobs:
           COMPONENTS: ${{ steps.stats.outputs.components }}
       
       - name: Commit README
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "docs: auto-update README with latest stats [skip ci]"
           file_pattern: "README.md"
@@ -229,7 +229,7 @@ jobs:
           compodoc -p tsconfig.json -d docs/api --theme material --hideGenerator
       
       - name: Commit API docs
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "docs: auto-generate API documentation [skip ci]"
           file_pattern: "docs/api/**"
