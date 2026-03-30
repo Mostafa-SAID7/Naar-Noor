@@ -1,7 +1,7 @@
 # Multi-stage build for Naar & Noor Restaurant
 
 # Stage 1: Build the Angular application
-FROM node:18-alpine AS build
+FROM node:25-alpine AS build
 
 WORKDIR /app
 
