@@ -10,6 +10,7 @@ import { CinematicBannerComponent } from '../../sections/cinematic-banner/cinema
 import { ChefsComponent } from '../../sections/chefs/chefs.component';
 import { ReviewsComponent } from '../../sections/reviews/reviews.component';
 import { BlogComponent } from '../../sections/blog/blog.component';
+import { ContactComponent } from '../../sections/contact/contact.component';
 import { LocationsComponent } from '../../sections/locations/locations.component';
 
 @Component({
@@ -27,6 +28,7 @@ import { LocationsComponent } from '../../sections/locations/locations.component
     ChefsComponent,
     ReviewsComponent,
     BlogComponent,
+    ContactComponent,
     LocationsComponent
   ],
   templateUrl: './home.component.html',

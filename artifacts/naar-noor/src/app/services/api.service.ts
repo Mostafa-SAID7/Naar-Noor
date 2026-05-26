@@ -49,6 +49,18 @@ export interface CreateReservationResponse {
   id: string;
 }
 
+export interface SubmitContactRequest {
+  name: string;
+  email: string;
+  phoneNumber?: string;
+  subject: string;
+  message: string;
+}
+
+export interface SubmitContactResponse {
+  id: string;
+}
+
 @Injectable({ providedIn: 'root' })
 export class ApiService {
   private readonly http = inject(HttpClient);
@@ -71,5 +83,9 @@ export class ApiService {
 
   createReservation(data: CreateReservationRequest): Observable<CreateReservationResponse> {
     return this.http.post<CreateReservationResponse>(`${this.base}/reservations`, data);
+  }
+
+  submitContact(data: SubmitContactRequest): Observable<SubmitContactResponse> {
+    return this.http.post<SubmitContactResponse>(`${this.base}/contact`, data);
   }
 }

@@ -1,0 +1,158 @@
+<section id="contact" class="py-28 px-6 bg-[#0d0d0d] border-t border-white/5">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-20">
+      <span class="text-[#C65A1E] text-xs font-medium tracking-[0.2em] uppercase mb-3 block">Get In Touch</span>
+      <h2 class="font-['Forum'] text-4xl md:text-5xl text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">Contact Us</h2>
+      <div class="mt-6 w-12 h-px bg-[#C65A1E]/50 mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 max-w-5xl mx-auto">
+
+      <!-- Info Column -->
+      <div class="lg:col-span-2 space-y-8">
+        <div>
+          <h3 class="font-['Forum'] text-2xl text-white tracking-tight mb-4">We'd love to hear from you</h3>
+          <p class="text-sm text-neutral-400 font-light leading-relaxed">
+            Whether you have a question about our menu, want to arrange a private dining event, or simply want to say hello — we're here.
+          </p>
+        </div>
+
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="w-9 h-9 rounded-lg bg-[#111] border border-white/5 flex items-center justify-center shrink-0 text-[#C65A1E]">
+              <iconify-icon icon="solar:phone-linear" width="18"></iconify-icon>
+            </div>
+            <div>
+              <p class="text-[10px] text-neutral-500 uppercase tracking-wider mb-1">Phone</p>
+              <p class="text-sm text-neutral-300 font-light">+44 (0) 1481 123456</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-9 h-9 rounded-lg bg-[#111] border border-white/5 flex items-center justify-center shrink-0 text-[#C65A1E]">
+              <iconify-icon icon="solar:letter-linear" width="18"></iconify-icon>
+            </div>
+            <div>
+              <p class="text-[10px] text-neutral-500 uppercase tracking-wider mb-1">Email</p>
+              <p class="text-sm text-neutral-300 font-light">hello&#64;naarnoor.com</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-9 h-9 rounded-lg bg-[#111] border border-white/5 flex items-center justify-center shrink-0 text-[#C65A1E]">
+              <iconify-icon icon="solar:map-point-linear" width="18"></iconify-icon>
+            </div>
+            <div>
+              <p class="text-[10px] text-neutral-500 uppercase tracking-wider mb-1">Address</p>
+              <p class="text-sm text-neutral-300 font-light leading-relaxed">Town Centre, St Peter Port<br/>Guernsey, GY1 2PN</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-9 h-9 rounded-lg bg-[#111] border border-white/5 flex items-center justify-center shrink-0 text-[#C65A1E]">
+              <iconify-icon icon="solar:clock-circle-linear" width="18"></iconify-icon>
+            </div>
+            <div>
+              <p class="text-[10px] text-neutral-500 uppercase tracking-wider mb-1">Hours</p>
+              <p class="text-sm text-neutral-300 font-light">Lunch: 12:00–14:00 &nbsp;·&nbsp; Dinner: 18:00–21:00</p>
+              <p class="text-[10px] text-[#C65A1E] mt-1 uppercase tracking-wider font-medium">Closed Mondays</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Column -->
+      <div class="lg:col-span-3 bg-[#111] border border-white/5 rounded-2xl p-8 md:p-10">
+
+        <!-- Success State -->
+        <div *ngIf="submitSuccess" class="flex flex-col items-center justify-center text-center py-10 animate-fade-in">
+          <div class="w-14 h-14 rounded-full bg-[#C65A1E]/10 border border-[#C65A1E]/30 flex items-center justify-center mb-5">
+            <iconify-icon icon="solar:check-circle-linear" width="32" class="text-[#C65A1E]"></iconify-icon>
+          </div>
+          <h3 class="font-['Forum'] text-2xl text-white mb-2">Message Sent!</h3>
+          <p class="text-sm text-neutral-400 leading-relaxed mb-6 max-w-xs">
+            Thank you for reaching out. We'll get back to you as soon as possible.
+          </p>
+          <button (click)="reset()" class="text-xs text-neutral-400 hover:text-white transition-colors underline underline-offset-2">
+            Send another message
+          </button>
+        </div>
+
+        <!-- Form -->
+        <form *ngIf="!submitSuccess" (ngSubmit)="onSubmit()" class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+          <div class="space-y-1.5">
+            <label class="text-xs text-neutral-400 ml-1">Your Name</label>
+            <input
+              type="text"
+              [(ngModel)]="form.name"
+              name="name"
+              placeholder="John Doe"
+              class="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#C65A1E] focus:ring-1 focus:ring-[#C65A1E] transition-all">
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-xs text-neutral-400 ml-1">Email Address</label>
+            <input
+              type="email"
+              [(ngModel)]="form.email"
+              name="email"
+              placeholder="john@example.com"
+              class="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#C65A1E] focus:ring-1 focus:ring-[#C65A1E] transition-all">
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-xs text-neutral-400 ml-1">Phone <span class="text-neutral-600">(optional)</span></label>
+            <input
+              type="tel"
+              [(ngModel)]="form.phone"
+              name="phone"
+              placeholder="+44..."
+              class="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#C65A1E] focus:ring-1 focus:ring-[#C65A1E] transition-all">
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-xs text-neutral-400 ml-1">Subject</label>
+            <input
+              type="text"
+              [(ngModel)]="form.subject"
+              name="subject"
+              placeholder="Private dining enquiry"
+              class="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#C65A1E] focus:ring-1 focus:ring-[#C65A1E] transition-all">
+          </div>
+
+          <div class="space-y-1.5 sm:col-span-2">
+            <label class="text-xs text-neutral-400 ml-1">Message</label>
+            <textarea
+              [(ngModel)]="form.message"
+              name="message"
+              rows="5"
+              placeholder="Tell us how we can help..."
+              class="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#C65A1E] focus:ring-1 focus:ring-[#C65A1E] transition-all resize-none leading-relaxed">
+            </textarea>
+          </div>
+
+          <!-- Error -->
+          <div *ngIf="submitError" class="sm:col-span-2 flex items-start gap-2 text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3">
+            <iconify-icon icon="solar:danger-circle-linear" width="16" class="shrink-0 mt-0.5"></iconify-icon>
+            {{ submitError }}
+          </div>
+
+          <button
+            type="submit"
+            [disabled]="submitting"
+            class="sm:col-span-2 w-full px-6 py-3.5 text-sm font-medium rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
+            [class]="submitting
+              ? 'bg-white/10 text-white/40 cursor-not-allowed'
+              : 'text-white bg-[#C65A1E] hover:bg-[#a84915] hover:shadow-[0_0_20px_rgba(198,90,30,0.4)]'">
+            <iconify-icon *ngIf="submitting" icon="solar:refresh-circle-linear" width="18" class="animate-spin"></iconify-icon>
+            {{ submitting ? 'Sending...' : 'Send Message' }}
+          </button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</section>
