@@ -1,9 +1,5 @@
-# Allow all crawlers
 User-agent: *
 Allow: /
+Disallow: /api/
 
-# Sitemap location
-Sitemap: https://naar-noor.vercel.app/sitemap.xml
-
-# Crawl-delay for polite crawling
-Crawl-delay: 1
+Sitemap: https://www.naarnoor.com/sitemap.xml

@@ -1,19 +1,23 @@
 {
-  "name": "Naar & Noor - Authentic Himalayan Restaurant in Egypt",
+  "name": "Naar & Noor — Himalayan Restaurant",
   "short_name": "Naar & Noor",
-  "description": "Best Himalayan restaurant in Egypt. Experience authentic mountain cuisine with flame-grilled specialties and traditional recipes.",
+  "description": "Guernsey's premier Himalayan dining destination. Authentic flame-grilled specialties and traditional mountain recipes.",
   "theme_color": "#C65A1E",
   "background_color": "#0a0a0a",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
   "scope": "/",
   "start_url": "/",
-  "orientation": "portrait-primary",
+  "orientation": "any",
+  "lang": "en-GB",
+  "dir": "ltr",
+  "categories": ["food", "restaurant", "dining"],
   "icons": [
     {
       "src": "assets/icons/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "assets/icons/favicon.ico",
@@ -21,7 +25,21 @@
       "type": "image/x-icon"
     }
   ],
-  "categories": ["food", "restaurant", "dining"],
-  "lang": "en-US",
-  "dir": "ltr"
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Reserve a Table",
+      "short_name": "Reserve",
+      "description": "Book a table at Naar & Noor",
+      "url": "/#reserve",
+      "icons": [{ "src": "assets/icons/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "View Menu",
+      "short_name": "Menu",
+      "description": "Browse our Himalayan menu",
+      "url": "/#menu",
+      "icons": [{ "src": "assets/icons/favicon.svg", "sizes": "any" }]
+    }
+  ]
 }

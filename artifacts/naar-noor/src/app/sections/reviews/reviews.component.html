@@ -7,7 +7,7 @@
       <div class="mt-6 w-12 h-px bg-[#C65A1E]/50 mx-auto"></div>
     </div>
 
-    <div *ngIf="loading" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div *ngIf="loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div *ngFor="let i of [1,2,3]" class="p-8 rounded-2xl bg-[#111] border border-white/5 animate-pulse">
         <div class="flex gap-1 mb-6">
           <div *ngFor="let s of [1,2,3,4,5]" class="w-4 h-4 bg-white/10 rounded"></div>
@@ -24,20 +24,27 @@
       Unable to load reviews right now.
     </div>
 
-    <div *ngIf="!loading && !error" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div *ngFor="let review of reviews" class="p-8 rounded-2xl bg-[#111] border border-white/5 relative hover:border-white/10 transition-colors duration-300">
-        <iconify-icon icon="solar:quote-right-bold-duotone" width="48" class="absolute top-6 right-6 text-white/5"></iconify-icon>
+    <div *ngIf="!loading && !error && reviews.length === 0" class="text-center py-16 text-neutral-500 text-sm">
+      No reviews yet — be the first to dine with us!
+    </div>
 
-        <div class="flex items-center gap-1 mb-6 text-[#C65A1E]">
-          <iconify-icon *ngFor="let s of [].constructor(review.rating)" icon="solar:star-bold" width="16"></iconify-icon>
+    <div *ngIf="!loading && !error && reviews.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article *ngFor="let review of reviews" class="p-8 rounded-2xl bg-[#111] border border-white/5 relative hover:border-white/10 transition-colors duration-300 flex flex-col">
+        <iconify-icon icon="solar:quote-right-bold-duotone" width="48" class="absolute top-6 right-6 text-white/5" aria-hidden="true"></iconify-icon>
+
+        <div class="flex items-center gap-1 mb-6 text-[#C65A1E]" [attr.aria-label]="review.rating + ' out of 5 stars'">
+          <iconify-icon *ngFor="let s of [].constructor(review.rating)" icon="solar:star-bold" width="16" aria-hidden="true"></iconify-icon>
         </div>
 
-        <p class="text-sm text-neutral-300 font-light italic leading-relaxed mb-8">
+        <p class="text-sm text-neutral-300 font-light italic leading-relaxed mb-8 flex-1">
           "{{ review.text }}"
         </p>
 
-        <span class="text-xs text-neutral-400 uppercase tracking-wider font-medium">{{ review.author }}</span>
-      </div>
+        <footer class="flex items-center justify-between">
+          <span class="text-xs text-neutral-400 uppercase tracking-wider font-medium">{{ review.author }}</span>
+          <span *ngIf="review.source" class="text-[10px] text-neutral-600 uppercase tracking-wider">{{ review.source }}</span>
+        </footer>
+      </article>
     </div>
 
   </div>

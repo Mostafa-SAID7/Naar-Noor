@@ -1,6 +1,6 @@
 <section id="locations" class="py-28 px-6">
   <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-16">
+    <div class="text-center mb-20">
       <span class="text-[#C65A1E] text-xs font-medium tracking-[0.2em] uppercase mb-3 block">Find Us</span>
       <h2 class="font-['Forum'] text-4xl md:text-5xl text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">Visit Naar &amp; Noor</h2>
       <div class="mt-6 w-12 h-px bg-[#C65A1E]/50 mx-auto"></div>
@@ -8,44 +8,45 @@
 
     <div class="max-w-5xl mx-auto bg-[#0f0f0f] border border-white/5 rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
       <!-- Map Image with Overlay -->
-      <div class="w-full md:w-1/2 min-h-[300px] relative bg-[#0a0a0a]">
-        <img 
-          src="assets/locations/cooking-fire.jpg" 
-          alt="Map Location"
+      <div class="w-full md:w-1/2 min-h-[300px] md:min-h-[420px] relative bg-[#0a0a0a]">
+        <img
+          src="assets/locations/cooking-fire.jpg"
+          alt="Naar &amp; Noor restaurant location in Guernsey"
           loading="lazy"
           class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale mix-blend-luminosity">
         <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#0f0f0f]"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#C65A1E] flex flex-col items-center drop-shadow-[0_0_15px_rgba(198,90,30,0.5)]">
-          <iconify-icon icon="solar:map-point-bold" width="36"></iconify-icon>
+          <iconify-icon icon="solar:map-point-bold" width="48" aria-hidden="true"></iconify-icon>
+          <span class="mt-3 font-['Forum'] text-base text-white tracking-tight">St Peter Port</span>
         </div>
       </div>
 
       <!-- Information Panel -->
       <div class="w-full md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
         <h3 class="font-['Forum'] text-3xl text-white tracking-tighter mb-10">Visit Us</h3>
-        
+
         <div class="space-y-8">
           <div>
             <h4 class="text-[10px] text-neutral-500 uppercase tracking-wider font-medium mb-3 flex items-center gap-1.5">
-              <iconify-icon icon="solar:map-point-linear" width="14"></iconify-icon> Address
+              <iconify-icon icon="solar:map-point-linear" width="14" aria-hidden="true"></iconify-icon> Address
             </h4>
-            <p class="text-sm text-neutral-300 font-light leading-relaxed">
+            <address class="not-italic text-sm text-neutral-300 font-light leading-relaxed">
               Town Centre,<br/>
               St Peter Port,<br/>
               Guernsey, GY1 2PN
-            </p>
+            </address>
           </div>
 
           <div class="h-px w-full bg-white/5"></div>
 
           <div>
             <h4 class="text-[10px] text-neutral-500 uppercase tracking-wider font-medium mb-3 flex items-center gap-1.5">
-              <iconify-icon icon="solar:clock-circle-linear" width="14"></iconify-icon> Opening Hours
+              <iconify-icon icon="solar:clock-circle-linear" width="14" aria-hidden="true"></iconify-icon> Opening Hours
             </h4>
-            <div class="grid grid-cols-2 gap-y-2 gap-x-4 max-w-xs text-xs text-neutral-300 font-light">
-              <span class="text-neutral-500">Lunch</span> <span>12:00 PM – 2:00 PM</span>
-              <span class="text-neutral-500">Dinner</span> <span>6:00 PM – 9:00 PM</span>
-            </div>
+            <dl class="grid grid-cols-2 gap-y-2 gap-x-4 max-w-xs text-xs text-neutral-300 font-light">
+              <dt class="text-neutral-500">Lunch</dt><dd>12:00 PM – 2:00 PM</dd>
+              <dt class="text-neutral-500">Dinner</dt><dd>6:00 PM – 9:00 PM</dd>
+            </dl>
             <p class="text-[10px] text-[#C65A1E] mt-4 font-medium uppercase tracking-wider">Closed on Mondays</p>
           </div>
 
@@ -53,10 +54,19 @@
 
           <div>
             <h4 class="text-[10px] text-neutral-500 uppercase tracking-wider font-medium mb-3 flex items-center gap-1.5">
-              <iconify-icon icon="solar:phone-linear" width="14"></iconify-icon> Reservations
+              <iconify-icon icon="solar:phone-linear" width="14" aria-hidden="true"></iconify-icon> Reservations
             </h4>
-            <p class="text-sm text-neutral-300 font-light">+44 (0) 1481 123456</p>
+            <a href="tel:+441481123456" class="text-sm text-neutral-300 font-light hover:text-[#C65A1E] transition-colors duration-200">
+              +44 (0) 1481 123456
+            </a>
           </div>
+
+          <a
+            href="#reserve"
+            class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3 text-sm font-medium text-white bg-[#C65A1E] rounded-xl hover:bg-[#a84915] hover:shadow-[0_0_20px_rgba(198,90,30,0.4)] transition-all duration-300">
+            Book a Table
+            <iconify-icon icon="solar:arrow-right-linear" width="16" aria-hidden="true"></iconify-icon>
+          </a>
         </div>
       </div>
     </div>
