@@ -3,6 +3,8 @@ modules = ["nodejs-24", "dotnet-8.0"]
 [deployment]
 router = "application"
 deploymentTarget = "autoscale"
+run = ["bash", "-c", "PORT=8080 bash artifacts/api-server/run-dev.sh & pnpm --filter @workspace/naar-noor run serve"]
+build = ["bash", "-c", "pnpm --filter @workspace/naar-noor run build && cd artifacts/api-server && dotnet build src/NaarNoor.API/NaarNoor.API.csproj -c Release"]
 
 [deployment.postBuild]
 args = ["pnpm", "store", "prune"]
@@ -11,8 +13,45 @@ env = { "CI" = "true" }
 [workflows]
 runButton = "Project"
 
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "API Server"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pnpm --filter @workspace/naar-noor run dev --port 5000"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow]]
+name = "API Server"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "PORT=8080 bash artifacts/api-server/run-dev.sh"
+waitForPort = 8080
+
+[workflows.workflow.metadata]
+outputType = "console"
+
 [agent]
-stack = "PNPM_WORKSPACE"
+stack = "BEST_EFFORT_FALLBACK"
 expertMode = true
 
 [postMerge]
@@ -20,12 +59,12 @@ path = "scripts/post-merge.sh"
 timeoutMs = 20000
 
 [[ports]]
-localPort = 8080
-externalPort = 8080
+localPort = 5000
+externalPort = 80
 
 [[ports]]
-localPort = 8081
-externalPort = 8081
+localPort = 8080
+externalPort = 8080
 
 [[ports]]
 localPort = 24790
