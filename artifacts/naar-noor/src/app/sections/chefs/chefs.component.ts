@@ -28,10 +28,11 @@ export class ChefsComponent implements OnInit {
   ngOnInit(): void {
     this.api.getChefs().subscribe({
       next: (chefs: Chef[]) => {
-        this.chefs = chefs.map(chef => ({
+        const images = ['assets/chefs/chef-arjun.jpg', 'assets/chefs/chef-maya.jpg'];
+        this.chefs = chefs.map((chef, idx) => ({
           name: chef.name,
           role: chef.title,
-          image: chef.imageUrl || 'assets/chefs/chef-placeholder.jpg',
+          image: chef.imageUrl || images[idx % images.length],
           bio: chef.bio,
           specialty: chef.specialty
         }));
