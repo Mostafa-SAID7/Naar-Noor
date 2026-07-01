@@ -34,7 +34,7 @@
     "@types/node": "^20.0.0",
     "@types/pg": "^8.20.0",
     "autoprefixer": "^10.4.27",
-    "chokidar": "^3.6.0",
+    "chokidar": "^5.0.0",
     "cypress": "^15.18.0",
     "husky": "^9.1.7",
     "jasmine-core": "^6.3.0",
