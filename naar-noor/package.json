@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@angular/animations": "^18.2.14",
-    "@angular/build": "^18.2.21",
+    "@angular/build": "^22.0.5",
     "@angular/cli": "^18.2.21",
     "@angular/common": "^18.2.14",
     "@angular/compiler": "^18.2.14",
